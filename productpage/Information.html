@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+
+    <script src="../js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="../css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet"/>
+    <script src="../js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            font-size: 12px;
+            font-family: Arial;
+        }
+
+        div.imgAndInfo {
+            max-width: 800px;
+            margin: 40px 20px;
+        }
+
+        div.imgInimgAndInfo {
+            width: 100px;
+            float: left;
+        }
+
+        div.infoInimgAndInfo {
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        div.infoInimgAndInfo div.productTitle {
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        div.infoInimgAndInfo div.productSubTitle {
+            color: #dd2727;
+            font-size: 12px;
+            margin: 0 10px;
+        }
+
+        div.infoInimgAndInfo div.juhuasuan {
+            background-color: #2da77a;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            margin-top: 10px;
+        }
+
+        div.infoInimgAndInfo span.juhuasuanBig {
+            font-size: 18px;
+            font-weight: bold;
+            font-family: "Heiti SC";
+        }
+
+        div.infoInimgAndInfo span.juhuasuanTime {
+            color: #ffc057;
+            font-weight: bold;
+        }
+
+        div.infoInimgAndInfo div.productPriceDiv {
+            background-image: url("https://how2j.cn/tmall/img/site/priceBackground.png");
+            height: 102px;
+            padding: 10px;
+            color: #666666;
+        }
+
+        div.infoInimgAndInfo div.gouwuquanDiv {
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        div.infoInimgAndInfo div.originalDiv {
+            margin-top: 5px;
+        }
+
+        div.infoInimgAndInfo span.originalPriceDesc {
+            color: #999999;
+            display: inline-block;
+            width: 68px;
+        }
+
+        div.infoInimgAndInfo span.originalPrice {
+            font-family: Arial;
+            font-size: 12px;
+            color: #333333;
+            text-decoration: line-through;
+        }
+
+        div.infoInimgAndInfo span.promotionPriceYuan {
+            font-size: 18px;
+            font-family: Arial;
+            color: #c40000;
+        }
+
+        div.infoInimgAndInfo span.promotionPrice {
+            color: #c40000;
+            font-size: 30px;
+            font-family: Arial;
+            font-weight: bold;
+        }
+
+        div.infoInimgAndInfo span.promotionPriceDesc {
+            color: #999999;
+            display: inline-block;
+            width: 68px;
+            position: relative;
+            left: 0;
+        }
+
+        div.infoInimgAndInfo div.promotionDiv {
+            margin-top: 5px;
+        }
+
+        div.infoInimgAndInfo div.productSaleAndReviewNumber {
+            margin: 20px 0;
+            border-top: dotted #c9c9c9 1px;
+            border-bottom: dotted #c9c9c9 1px;
+            padding: 10px;
+        }
+
+        div.infoInimgAndInfo div.productSaleAndReviewNumber div {
+            display: inline-block;
+            width: 49%;
+            text-align: center;
+            color: #999999;
+            font-size: 12px;
+        }
+
+        div.infoInimgAndInfo div.productSaleAndReviewNumber div:first-child {
+            border-right: solid 1px #E5DFDA;
+        }
+
+        div.infoInimgAndInfo div.productNumber {
+            color: #999999;
+        }
+
+        div.infoInimgAndInfo span.productNumberSettingSpan {
+            border: 1px solid #999;
+            display: inline-block;
+            width: 43px;
+            height: 32px;
+            padding-top: 7px;
+        }
+
+        div.infoInimgAndInfo input.productNumberSetting {
+            border: 0;
+            height: 80%;
+            width: 80%;
+        }
+
+        div.productNumber span.updown img {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        div.productNumber span.updown {
+            border: 1px solid #999;
+            display: block;
+            width: 20px;
+            height: 14px;
+            text-align: center;
+            padding-top: 4px;
+        }
+
+        div.productNumber span.updownMiddle {
+            height: 4px;
+            display: block;
+        }
+
+        div.productNumber span.arrow {
+            display: inline-block;
+            width: 22px;
+            height: 32px;
+            vertical-align: top;
+        }
+
+        div.serviceCommitment {
+            margin: 20px 0;
+        }
+
+        div.serviceCommitment span.serviceCommitmentDesc {
+            color: #999999;
+        }
+
+        div.serviceCommitment span.serviceCommitmentLink a {
+            color: #666666;
+        }
+
+        div.buyDiv {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        div.buyDiv button {
+            display: inline-block;
+            margin: 0 10px;
+            width: 180px;
+            height: 40px;
+        }
+
+        button.buyButton {
+            border: 1px solid #c40000;
+            background-color: #FFEDED;
+            text-align: center;
+            line-height: 40px;
+            font-size: 16px;
+            color: #c40000;
+            font-family: Arial;
+        }
+
+        button.addCartButton {
+            border: solid 1px #c40000;
+            background-color: #c40000;
+            text-align: center;
+            line-height: 40px;
+            font-size: 16px;
+            color: white;
+            font-family: Arial;
+        }
+
+        button.addCartButton span.glyphicon {
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .redColor {
+            color: #c40000;
+        }
+
+        .boldWord {
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+
+
+</body>
+</html>
