@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carousel</title>
+
+    <script src="../js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="../css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet"/>
+    <script src="../js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+    <style>
+        div.categoryWithCarousel {
+            width: 100%;
+            position: relative;
+        }
+
+        div.categoryWithCarousel div.headbar {
+            background-color: #dd2727;
+        }
+
+        img.catear {
+            position: absolute;
+            height: 15px;
+            display: none;
+        }
+
+        div.categoryWithCarousel div.head {
+            width: 200px;
+            height: 36px;
+            line-height: 36px;
+            display: inline-block;
+            font-size: 16px;
+            color: white;
+            background-color: #c60a0a;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        div.categoryWithCarousel div.rightMenu {
+            display: inline-block;
+        }
+
+        div.categoryWithCarousel div.rightMenu a {
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+        }
+
+        div.categoryWithCarousel div.rightMenu span {
+            margin: 0 20px 0 20px;
+        }
+
+        div.categoryWithCarousel div.rightMenu img {
+            height: 30px;
+        }
+
+        div.carousel-of-product {
+            height: 510px;
+            width: 1125px;
+            margin: 0 auto;
+        }
+
+        img.carouselImage {
+            height: 510px !important;
+        }
+
+        div.carouselBackgroundDiv {
+            width: 100%;
+            height: 510px;
+            background-color: #e8e8e8;
+            position: absolute;
+            top: 36px;
+            z-index: -1;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div style="height: 50px"></div>
+<img src="https://how2j.cn/tmall/img/site/catear.png" alt="" class="catear" id="catear"
+     style="left: 260.5px; top: 159.65px; display: none">
+<div class="categoryWithCarousel">
+    <div class="headbar show1">
+        <div class="head">
+            <span class="glyphicon glyphicon-th-list" style="margin-left: 10px"></span>
+            <span style="margin-left: 10px">商品分类</span>
+        </div>
+        <div class="rightMenu">
+            <span><a href="#nowhere"><img src="https://how2j.cn/tmall/img/site/chaoshi.png" alt=""></a></span>
+            <span><a href="#nowhere"><img src="https://how2j.cn/tmall/img/site/guoji.png" alt=""></a></span>
+            <span><a href="#nowhere">平板电视</a></span>
+            <span><a href="#nowhere">马桶</a></span>
+            <span><a href="#nowhere">沙发</a></span>
+            <span><a href="#nowhere">电热水器</a></span>
+        </div>
+    </div>
+
+    <div data-ride="carousel" class="carousel-of-product carousel slide" id="carousel-of-product">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#carouselImage"></li>
+            <li data-slide-to="1" data-target="#carouselImage"></li>
+            <li data-slide-to="2" data-target="#carouselImage"></li>
+            <li data-slide-to="3" data-target="#carouselImage"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="https://how2j.cn/tmall/img/lunbo/1.jpg" alt="" class="carouselImage">
+            </div>
+            <div class="item">
+                <img src="https://how2j.cn/tmall/img/lunbo/2.jpg" alt="" class="carouselImage">
+            </div>
+            <div class="item">
+                <img src="https://how2j.cn/tmall/img/lunbo/3.jpg" alt="" class="carouselImage">
+            </div>
+            <div class="item">
+                <img src="https://how2j.cn/tmall/img/lunbo/4.jpg" alt="" class="carouselImage">
+            </div>
+        </div>
+    </div>
+    <div class="carouselBackgroundDiv"></div>
+</div>
+
+</body>
+
+<script>
+    $("div.rightMenu span").mouseenter(function () {
+        let left = $(this).position().left;
+        let top = $(this).position().top;
+        let width = $(this).css("width");
+        let destLeft = parseInt(left) + parseInt(width) / 2 + 7;
+        $("img.catear").css("left", destLeft);
+        $("img.catear").css("top", top + 32);
+        $("img.catear").fadeIn(500);
+    });
+    $("div.rightMenu span").mouseleave(function () {
+        $("img#catear").hide();
+    })
+</script>
+
+</html>
