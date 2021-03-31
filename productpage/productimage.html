@@ -8,6 +8,28 @@
     <link href="../css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet"/>
     <script src="../js/bootstrap/3.3.6/bootstrap.min.js"></script>
 
+    <script>
+        $(function () {
+            $("img.smallImage").mouseenter(function () {
+                let bigImageURL = $(this).attr("bigImageURL");
+                $("img.bigImg").attr("src", bigImageURL);
+            });
+            $("img.bigImg").load(
+                function () {
+                    $("img.smallImage").each(function () {
+                        let bigImageURL = $(this).attr("bigImageURL");
+                        img = new Image();
+                        img.src = bigImageURL;
+                        img.onload = function () {
+                            console.log(bigImageURL);
+                            $("img.img4load").append($(img));
+                        }
+                    });
+                }
+            );
+        })
+    </script>
+
     <style>
         div.imgAndInfo {
             margin: 40px 20px;
@@ -30,13 +52,13 @@
             margin: 20px auto;
         }
 
-        div.smallImageDiv img.smallImg {
+        div.smallImageDiv img.smallImage {
             width: 60px;
             height: 60px;
             border: 2px solid white;
         }
 
-        div.smallImageDiv img.smallImg:hover {
+        div.smallImageDiv img.smallImage:hover {
             border: 1px solid black;
         }
     </style>
@@ -48,13 +70,20 @@
     <div class="imgInimgAndInfo">
         <img width="100px" class="bigImg" src="https://how2j.cn/tmall/img/productSingle/8619.jpg" alt="">
         <div class="smallImageDiv">
-            <img width="56px" class="smallImg" src="https://how2j.cn/tmall/img/productSingle/8620.jpg" alt="">
-            <img width="56px" class="smallImg" src="https://how2j.cn/tmall/img/productSingle/8619.jpg" alt="">
-            <img width="56px" class="smallImg" src="https://how2j.cn/tmall/img/productSingle/8618.jpg" alt="">
-            <img width="56px" class="smallImg" src="https://how2j.cn/tmall/img/productSingle/8617.jpg" alt="">
-            <img width="56px" class="smallImg" src="https://how2j.cn/tmall/img/productSingle/8616.jpg" alt="">
+            <img width="56px" class="smallImage" src="https://how2j.cn/tmall/img/productSingle/8620.jpg"
+                 bigImageURL="https://how2j.cn/tmall/img/productSingle/8620.jpg" alt="">
+            <img width="56px" class="smallImage" src="https://how2j.cn/tmall/img/productSingle/8619.jpg"
+                 bigImageURL="https://how2j.cn/tmall/img/productSingle/8619.jpg" alt="">
+            <img width="56px" class="smallImage" src="https://how2j.cn/tmall/img/productSingle/8618.jpg"
+                 bigImageURL="https://how2j.cn/tmall/img/productSingle/8618.jpg" alt="">
+            <img width="56px" class="smallImage" src="https://how2j.cn/tmall/img/productSingle/8617.jpg"
+                 bigImageURL="https://how2j.cn/tmall/img/productSingle/8617.jpg" alt="">
+            <img width="56px" class="smallImage" src="https://how2j.cn/tmall/img/productSingle/8616.jpg"
+                 bigImageURL="https://how2j.cn/tmall/img/productSingle/8616.jpg" alt="">
         </div>
+        <div class="img4load hidden" ></div>
     </div>
+    <div style="clear: both"></div>
 </div>
 
 </body>
