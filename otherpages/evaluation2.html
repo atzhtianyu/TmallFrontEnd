@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Evaluation page</title>
+
+    <script src="../js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="../css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet"/>
+    <script src="../js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+    <style>
+        div.reviewDiv {
+            max-width: 1013px;
+            margin: 10px auto;
+        }
+
+        div.reviewStatisticDiv {
+            margin-top: 20px;
+        }
+
+        div.reviewStatisticLeft {
+            width: 180px;
+            float: left;
+        }
+
+        div.reviewStatisticLeftTop {
+            background-color: #c40000;
+            height: 6px;
+        }
+
+        div.reviewStatisticLeftContent {
+            text-align: center;
+            color: #363535;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 29px;
+            border-left: 1px solid #D5D4D4;
+            border-right: 1px solid #D5D4D4;
+            background-color: #F6F5F1;
+        }
+
+        div.reviewStatisticLeftFoot {
+            height: 6px;
+            border-left: 1px solid #D5D4D4;
+            border-bottom: 1px solid #D5D4D4;
+            background-color: #F6F5F1;
+        }
+
+        span.reviewStatisticNumber {
+            color: #284CA5;
+        }
+
+        div.reviewStatisticRight {
+            overflow: hidden;
+        }
+
+        div.reviewStatisticRightEmpty {
+            height: 35px;
+        }
+
+        div.reviewStatisticFoot {
+            border: 1px solid #D5D4D4;
+            height: 6px;
+            border-left-width: 0;
+            background-color: #F6F5F1;
+        }
+
+        div.makeReviewDiv {
+            margin-top: 20px;
+            border: 1px solid #D1CCC8;
+            background-color: #EFEFEF;
+        }
+
+        div.makeReviewText {
+            margin: 20px 40px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        table.makeReviewTable {
+            margin: 20px 40px;
+            font-size: 12px;
+        }
+
+        table.makeReviewTable td {
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #E7E7E7;
+        }
+
+        table.makeReviewTable textarea {
+            border-width: 0;
+            resize: none;
+            width: 420px;
+            height: 120px;
+        }
+
+        div.makeReviewButtonDiv {
+            padding: 15px;
+            background-color: white;
+            text-align: center;
+        }
+
+        button.makeReviewButton {
+            border-width: 0;
+            background-color: #c40000;
+            font-weight: bold;
+            color: white;
+            width: 72px;
+            height: 26px;
+            border-radius: 2px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="reviewDiv">
+    <div class="reviewStatisticDiv">
+        <div class="reviewStatisticLeft">
+            <div class="reviewStatisticLeftTop"></div>
+            <div class="reviewStatisticLeftContent">
+                累计评价<span class="reviewStatisticNumber"> 13</span>
+            </div>
+            <div class="reviewStatisticLeftFoot"></div>
+        </div>
+        <div class="reviewStatisticRight">
+            <div class="reviewStatisticRightEmpty"></div>
+            <div class="reviewStatisticFoot"></div>
+        </div>
+    </div>
+    <div class="makeReviewDiv">
+        <form method="post">
+            <div class="makeReviewText">其他买家，需要你的建议哦！</div>
+            <table class="makeReviewTable">
+                <tbody>
+                <tr>
+                    <td class="makeReviewTableFirstTD">评价商品</td>
+                    <td><textarea name="content"></textarea></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="makeReviewButtonDiv">
+                <input type="hidden" value="952" name="oid">
+                <input type="hidden" value="256" name="pid">
+                <button class="makeReviewButton">提交评价</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
